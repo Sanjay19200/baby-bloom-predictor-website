@@ -115,7 +115,12 @@ const Contact = () => {
                       <h3 className="font-medium text-gray-900 mb-1">Our Location</h3>
                       <p className="text-gray-600">
                     </p>
-                      <p className="text-gray-600">Medical District, CA 90210</p>
+                      <p className="text-gray-600">Our College:
+
+CSE dept
+Dayanand Sagar Academy of Technology and Management
+
+INDIA</p>
                     </div>
                   </div>
                   
