@@ -94,30 +94,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-medical-50 py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="p-6">
-              <p className="text-4xl font-bold gradient-text">85%</p>
-              <p className="text-gray-600 mt-2">Prediction Accuracy</p>
-            </div>
-            <div className="p-6">
-              <p className="text-4xl font-bold gradient-text">20+</p>
-              <p className="text-gray-600 mt-2">Research Papers</p>
-            </div>
-            <div className="p-6">
-              <p className="text-4xl font-bold gradient-text">50K+</p>
-              <p className="text-gray-600 mt-2">Predictions Made</p>
-            </div>
-            <div className="p-6">
-              <p className="text-4xl font-bold gradient-text">100+</p>
-              <p className="text-gray-600 mt-2">Hospitals Using Our Tool</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
