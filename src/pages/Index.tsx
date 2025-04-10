@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Users, ChartBar, Activity, Heart } from 'lucide-react';
@@ -39,11 +38,6 @@ const Index = () => {
             <div className="lg:flex justify-end">
               <div className="relative">
                 <div className="absolute -z-10 rounded-full w-72 h-72 bg-gradient-radial from-medical-100 to-transparent blur-3xl opacity-70 bottom-0 right-0"></div>
-                <img
-                  src="/public/lovable-uploads/6b42cf36-7c32-45de-9074-765509501f74.png"
-                  alt="Baby in neonatal care"
-                  className="rounded-lg shadow-xl max-w-full object-cover animate-fade-in"
-                />
               </div>
             </div>
           </div>
