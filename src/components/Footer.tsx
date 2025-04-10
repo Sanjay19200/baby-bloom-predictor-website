@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-gray-50 border-t border-gray-100">
+  return <footer className="bg-gray-50 border-t border-gray-100">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
@@ -92,11 +89,15 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Phone size={16} className="mr-2 text-medical-600 mt-0.5" />
-                <span className="text-gray-600 text-sm">+1 (555) 123-4567</span>
+                <span className="text-gray-600 text-sm">+91 7899778511</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={16} className="mr-2 text-medical-600 mt-0.5" />
-                <span className="text-gray-600 text-sm">123 Healthcare Ave, Medical District, CA 90210</span>
+                <span className="text-gray-600 text-sm">Our College:
+
+CSE dept
+Dayanand Sagar Academy of Technology and Management
+INDIA</span>
               </li>
             </ul>
           </div>
@@ -106,8 +107,6 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} BabyBloom Predictor. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
