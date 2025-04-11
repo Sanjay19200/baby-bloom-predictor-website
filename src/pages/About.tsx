@@ -159,65 +159,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="bg-gray-50 py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold gradient-text mb-4">Our Leadership Team</h2>
-            <p className="text-gray-600">
-              Meet the experts behind BabyBloom's innovative prediction technology.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-md card-hover">
-              <CardContent className="p-6">
-                <img
-                  src="https://randomuser.me/api/portraits/women/76.jpg"
-                  alt="Dr. Maria Williams"
-                  className="w-24 h-24 rounded-full mx-auto mb-4"
-                />
-                <h3 className="text-lg font-bold text-center">Dr. Maria Williams</h3>
-                <p className="text-medical-600 text-sm text-center mb-2">Chief Medical Officer</p>
-                <p className="text-gray-600 text-sm text-center">
-                  Former Director of Obstetrics at Memorial Hospital with over 20 years of experience in maternal-fetal medicine.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-md card-hover">
-              <CardContent className="p-6">
-                <img
-                  src="https://randomuser.me/api/portraits/men/32.jpg"
-                  alt="Dr. James Chen"
-                  className="w-24 h-24 rounded-full mx-auto mb-4"
-                />
-                <h3 className="text-lg font-bold text-center">Dr. James Chen</h3>
-                <p className="text-medical-600 text-sm text-center mb-2">Lead Data Scientist</p>
-                <p className="text-gray-600 text-sm text-center">
-                  AI specialist with a background in medical research and a PhD in Computational Biology from Stanford University.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-md card-hover">
-              <CardContent className="p-6">
-                <img
-                  src="https://randomuser.me/api/portraits/women/45.jpg"
-                  alt="Dr. Sarah Johnson"
-                  className="w-24 h-24 rounded-full mx-auto mb-4"
-                />
-                <h3 className="text-lg font-bold text-center">Dr. Sarah Johnson</h3>
-                <p className="text-medical-600 text-sm text-center mb-2">Research Director</p>
-                <p className="text-gray-600 text-sm text-center">
-                  Renowned researcher with over 40 published papers on preterm birth prevention and maternal health.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-medical-600 to-medical-800 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
