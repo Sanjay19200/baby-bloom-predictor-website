@@ -108,57 +108,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Technology */}
-      <section className="py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="relative">
-                <div className="absolute -z-10 rounded-full w-72 h-72 bg-gradient-radial from-medical-100 to-transparent blur-3xl opacity-70 top-0 right-0"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1050&q=80"
-                  alt="Medical technology"
-                  className="rounded-lg shadow-xl w-full object-cover"
-                />
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Technology</h2>
-              <div className="space-y-4">
-                <div className="flex">
-                  <CheckCircle className="h-6 w-6 text-medical-600 mr-3 flex-shrink-0" />
-                  <p className="text-gray-600">
-                    <span className="font-medium text-gray-900">Machine Learning Models:</span>{" "}
-                    Trained on anonymous data from over 50,000 pregnancies to identify subtle patterns and risk factors.
-                  </p>
-                </div>
-                <div className="flex">
-                  <CheckCircle className="h-6 w-6 text-medical-600 mr-3 flex-shrink-0" />
-                  <p className="text-gray-600">
-                    <span className="font-medium text-gray-900">Multiple Inputs:</span>{" "}
-                    Analyzes maternal health history, current vital signs, and biometric measurements for comprehensive assessment.
-                  </p>
-                </div>
-                <div className="flex">
-                  <CheckCircle className="h-6 w-6 text-medical-600 mr-3 flex-shrink-0" />
-                  <p className="text-gray-600">
-                    <span className="font-medium text-gray-900">Continuous Improvement:</span>{" "}
-                    Our algorithm is updated regularly with new medical research findings and feedback from healthcare providers.
-                  </p>
-                </div>
-                <div className="flex">
-                  <CheckCircle className="h-6 w-6 text-medical-600 mr-3 flex-shrink-0" />
-                  <p className="text-gray-600">
-                    <span className="font-medium text-gray-900">User-Friendly Interface:</span>{" "}
-                    Designed with input from medical professionals to ensure ease of use in clinical settings.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-medical-600 to-medical-800 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
