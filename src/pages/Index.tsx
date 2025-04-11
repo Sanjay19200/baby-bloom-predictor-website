@@ -46,8 +46,8 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
+      {/* The container div at line 50 has been removed */}
       <section className="py-16 sm:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold gradient-text mb-4">Healthcare Professionals Trust Us</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -113,7 +113,6 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
       </section>
 
       {/* CTA Section */}
