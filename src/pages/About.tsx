@@ -47,11 +47,7 @@ const About = () => {
             <div className="lg:flex justify-end">
               <div className="relative">
                 <div className="absolute -z-10 rounded-full w-72 h-72 bg-gradient-radial from-medical-100 to-transparent blur-3xl opacity-70 bottom-0 left-0"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1516645429142-f458ca520de2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1050&q=80"
-                  alt="Healthcare professionals collaborating"
-                  className="rounded-lg shadow-xl w-full object-cover"
-                />
+                {/* Image removed from here */}
               </div>
             </div>
           </div>
