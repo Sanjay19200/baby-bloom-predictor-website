@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Users, ChartBar, Activity, Heart } from 'lucide-react';
@@ -40,56 +41,6 @@ const Index = () => {
                 <div className="absolute -z-10 rounded-full w-72 h-72 bg-gradient-radial from-medical-100 to-transparent blur-3xl opacity-70 bottom-0 right-0"></div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 sm:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold gradient-text mb-4">Our Prediction Technology</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              BabyBloom Predictor combines medical expertise with advanced machine learning to provide accurate preterm birth risk assessments.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-md card-hover">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="h-12 w-12 rounded-full bg-medical-100 flex items-center justify-center mb-5">
-                  <Activity className="h-6 w-6 text-medical-600" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Early Detection</h3>
-                <p className="text-gray-600 text-sm">
-                  Identify potential risks as early as the first trimester, enabling timely preventive measures.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-md card-hover">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="h-12 w-12 rounded-full bg-medical-100 flex items-center justify-center mb-5">
-                  <ChartBar className="h-6 w-6 text-medical-600" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">High Accuracy</h3>
-                <p className="text-gray-600 text-sm">
-                  Our algorithm provides over 85% prediction accuracy based on key biometric factors and medical history.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-md card-hover">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="h-12 w-12 rounded-full bg-medical-100 flex items-center justify-center mb-5">
-                  <Users className="h-6 w-6 text-medical-600" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Expert Validated</h3>
-                <p className="text-gray-600 text-sm">
-                  Developed and validated by leading obstetricians and neonatal specialists across multiple research institutions.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
