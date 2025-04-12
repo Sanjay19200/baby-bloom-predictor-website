@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Users, ChartBar, Activity, Heart } from 'lucide-react';
@@ -14,10 +13,6 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <span className="inline-flex items-center px-3 py-1 text-xs font-medium bg-medical-100 text-medical-800 rounded-full">
-                <TrendingUp className="h-3 w-3 mr-1" />
-                Advanced Detection Technology
-              </span>
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
                 Early Detection of{' '}
                 <span className="gradient-text">Preterm Birth</span>
@@ -46,7 +41,6 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      {/* The container div at line 50 has been removed */}
       <section className="py-16 sm:py-24">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold gradient-text mb-4">Healthcare Professionals Trust Us</h2>
