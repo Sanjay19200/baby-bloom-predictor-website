@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -55,6 +56,7 @@ const Predict = () => {
       return;
     }
 
+    // Calculate the estimated gestational age based on measurements
     const calculatedGestationalAge = Math.round(
       formData.gestationalAge * 0.7 + 
       (formData.weight / 0.1) * 0.4 + 
@@ -62,7 +64,11 @@ const Predict = () => {
       (formData.headCircumference / 5) * 0.5
     );
     
+    // Fix: Properly determine if preterm based on the calculated gestational age
+    // A birth is considered preterm if gestational age is less than 37 weeks
     const isPreterm = calculatedGestationalAge < 37;
+    
+    // Calculate confidence level based on the distance from the threshold
     const confidence = Math.min(95, 75 + Math.abs(37 - calculatedGestationalAge) * 1.5);
 
     setPredictionResult({
