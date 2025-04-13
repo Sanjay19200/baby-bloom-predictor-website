@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -20,7 +19,7 @@ const Predict = () => {
     weight: 0.75,
     length: 34.5,
     headCircumference: 9.1,
-    gestationalAge: 36, // Added gestational age with default value
+    gestationalAge: 36,
   });
   
   const [predictionResult, setPredictionResult] = useState<{
@@ -56,10 +55,8 @@ const Predict = () => {
       return;
     }
 
-    // Use provided gestational age as a factor in the calculation
-    // This is a simplified prediction model for demonstration
     const calculatedGestationalAge = Math.round(
-      formData.gestationalAge * 0.7 + // Give weight to the provided gestational age
+      formData.gestationalAge * 0.7 + 
       (formData.weight / 0.1) * 0.4 + 
       (formData.length / 10) * 0.3 + 
       (formData.headCircumference / 5) * 0.5
@@ -89,7 +86,6 @@ const Predict = () => {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
@@ -101,14 +97,12 @@ const Predict = () => {
         </div>
       </section>
 
-      {/* Prediction Tool Section */}
       <section className="py-8 sm:py-16 mb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <Card className="border-0 shadow-xl">
               <CardContent className="p-0">
                 <div className="grid grid-cols-1 lg:grid-cols-5">
-                  {/* Left panel - Form */}
                   <div className="p-6 lg:p-8 col-span-3 border-b lg:border-b-0 lg:border-r border-gray-100">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">Enter Measurements</h2>
                     
@@ -120,7 +114,6 @@ const Predict = () => {
                     )}
                     
                     <form onSubmit={handleSubmit} className="space-y-6">
-                      {/* Gestational Age Input */}
                       <div>
                         <div className="flex justify-between mb-2">
                           <Label htmlFor="gestationalAge" className="text-gray-700">Gestational Age (weeks)</Label>
@@ -144,7 +137,6 @@ const Predict = () => {
                         />
                       </div>
                       
-                      {/* Weight Input */}
                       <div>
                         <div className="flex justify-between mb-2">
                           <Label htmlFor="weight" className="text-gray-700">Weight (kg)</Label>
@@ -168,7 +160,6 @@ const Predict = () => {
                         />
                       </div>
                       
-                      {/* Length Input */}
                       <div>
                         <div className="flex justify-between mb-2">
                           <Label htmlFor="length" className="text-gray-700">Length (cm)</Label>
@@ -192,7 +183,6 @@ const Predict = () => {
                         />
                       </div>
                       
-                      {/* Head Circumference Input */}
                       <div>
                         <div className="flex justify-between mb-2">
                           <Label htmlFor="headCircumference" className="text-gray-700">Head Circumference (cm)</Label>
@@ -235,19 +225,11 @@ const Predict = () => {
                     </form>
                   </div>
                   
-                  {/* Right panel - Results */}
                   <div className="p-6 lg:p-8 col-span-2 bg-gray-50">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">Results</h2>
                     
                     {predictionResult ? (
                       <div className="space-y-6">
-                        <div className="text-center">
-                          <div className="text-4xl font-bold gradient-text mb-2">
-                            {predictionResult.gestationalAge} weeks
-                          </div>
-                          <p className="text-sm text-gray-500">Estimated Gestational Age</p>
-                        </div>
-                        
                         <div className={`p-4 rounded-md ${
                           predictionResult.isPreterm 
                             ? 'bg-rose-50 border border-rose-200' 
@@ -304,7 +286,6 @@ const Predict = () => {
         </div>
       </section>
 
-      {/* Information Section */}
       <section className="py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
