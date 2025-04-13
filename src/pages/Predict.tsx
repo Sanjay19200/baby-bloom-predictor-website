@@ -20,6 +20,7 @@ const Predict = () => {
     weight: 0.75,
     length: 34.5,
     headCircumference: 9.1,
+    gestationalAge: 36, // Added gestational age with default value
   });
   
   const [predictionResult, setPredictionResult] = useState<{
@@ -39,7 +40,7 @@ const Predict = () => {
   };
 
   const validateForm = () => {
-    if (formData.weight <= 0 || formData.length <= 0 || formData.headCircumference <= 0) {
+    if (formData.weight <= 0 || formData.length <= 0 || formData.headCircumference <= 0 || formData.gestationalAge <= 0) {
       setFormError('All measurements must be greater than zero');
       return false;
     }
@@ -55,13 +56,13 @@ const Predict = () => {
       return;
     }
 
-    // Calculate gestational age based on the measurements
+    // Use provided gestational age as a factor in the calculation
     // This is a simplified prediction model for demonstration
     const calculatedGestationalAge = Math.round(
-      20 + 
-      (formData.weight / 0.1) * 1.2 + 
-      (formData.length / 10) * 0.8 + 
-      (formData.headCircumference / 5) * 1.5
+      formData.gestationalAge * 0.7 + // Give weight to the provided gestational age
+      (formData.weight / 0.1) * 0.4 + 
+      (formData.length / 10) * 0.3 + 
+      (formData.headCircumference / 5) * 0.5
     );
     
     const isPreterm = calculatedGestationalAge < 37;
@@ -81,6 +82,7 @@ const Predict = () => {
       weight: 0.75,
       length: 34.5,
       headCircumference: 9.1,
+      gestationalAge: 36,
     });
     setPredictionResult(null);
   };
@@ -118,6 +120,30 @@ const Predict = () => {
                     )}
                     
                     <form onSubmit={handleSubmit} className="space-y-6">
+                      {/* Gestational Age Input */}
+                      <div>
+                        <div className="flex justify-between mb-2">
+                          <Label htmlFor="gestationalAge" className="text-gray-700">Gestational Age (weeks)</Label>
+                          <span className="text-sm text-gray-500">{formData.gestationalAge} weeks</span>
+                        </div>
+                        <Slider 
+                          id="gestationalAge"
+                          value={[formData.gestationalAge]} 
+                          min={22} 
+                          max={42} 
+                          step={1}
+                          onValueChange={(values) => handleInputChange('gestationalAge', values[0])} 
+                          className="mb-2"
+                        />
+                        <Input 
+                          type="number" 
+                          value={formData.gestationalAge}
+                          step={1}
+                          onChange={(e) => handleInputChange('gestationalAge', parseInt(e.target.value))}
+                          className="mt-2"
+                        />
+                      </div>
+                      
                       {/* Weight Input */}
                       <div>
                         <div className="flex justify-between mb-2">
