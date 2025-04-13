@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
 import { toast } from 'sonner';
+import AIChat from '@/components/AIChat';
 
 const Predict = () => {
   const [formData, setFormData] = useState({
@@ -275,6 +276,12 @@ const Predict = () => {
                             This prediction is based on current measurements and should be used in conjunction with clinical assessment.
                           </p>
                         </div>
+
+                        {/* Add the AI Chat component */}
+                        <AIChat 
+                          isPreterm={predictionResult.isPreterm}
+                          visible={!!predictionResult}
+                        />
                       </div>
                     ) : (
                       <div className="text-center py-12">
