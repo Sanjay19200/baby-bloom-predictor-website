@@ -40,37 +40,12 @@ const AIChat: React.FC<AIChatProps> = ({ isPreterm, visible }) => {
       }, 1500);
       
       return () => clearTimeout(timeout);
-    } else if (visible && !isPreterm) {
-      setIsLoading(true);
-      // Provide different message for full-term births
-      const timeout = setTimeout(() => {
-        setMessage(`
-          Your measurements indicate a full-term birth. Here are some general recommendations:
-
-          1. Regular check-ups: Continue with scheduled pediatric appointments.
-
-          2. Feeding schedule: Maintain regular feeding times based on your healthcare provider's recommendations.
-
-          3. Sleep safety: Always place baby on back to sleep and follow safe sleep guidelines.
-
-          4. Temperature: Maintain comfortable room temperature and dress baby appropriately.
-
-          5. Bonding: Spend time holding, talking to, and making eye contact with your baby.
-
-          6. Watch for warning signs: Contact your doctor if you notice fever, poor feeding, or unusual irritability.
-
-          7. Vaccination: Follow the recommended vaccination schedule from your healthcare provider.
-        `);
-        setIsLoading(false);
-      }, 1500);
-      
-      return () => clearTimeout(timeout);
     } else {
       setMessage('');
     }
   }, [visible, isPreterm]);
 
-  if (!visible) {
+  if (!visible || !isPreterm) {
     return null;
   }
 
@@ -99,3 +74,4 @@ const AIChat: React.FC<AIChatProps> = ({ isPreterm, visible }) => {
 };
 
 export default AIChat;
+
