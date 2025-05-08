@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,11 +8,37 @@ import { Label } from '@/components/ui/label';
 import { Mail, Phone, MapPin, MessageSquare, Send, Clock } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
 import { toast } from 'sonner';
+
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success('Thank you for your message! We will get back to you shortly.');
+    setIsSubmitting(true);
+    
+    try {
+      const formData = new FormData(e.currentTarget);
+      const formObject = Object.fromEntries(formData.entries());
+      
+      // This simulates a form submission without needing the website URL
+      // In a real app, you would send this to your backend API
+      console.log('Form data submitted:', formObject);
+      
+      // Simulate network delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Clear the form
+      e.currentTarget.reset();
+      
+      toast.success('Thank you for your message! We will get back to you shortly.');
+    } catch (error) {
+      toast.error('There was an error submitting your message. Please try again.');
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
   return <PageLayout>
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-16">
@@ -41,35 +67,43 @@ const Contact = () => {
                     <h2 className="text-2xl font-bold text-gray-900">Send us a Message</h2>
                   </div>
                   
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} method="POST" className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName" className="text-gray-700">First Name</Label>
-                        <Input id="firstName" placeholder="Enter your first name" required />
+                        <Input id="firstName" name="firstName" placeholder="Enter your first name" required />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName" className="text-gray-700">Last Name</Label>
-                        <Input id="lastName" placeholder="Enter your last name" required />
+                        <Input id="lastName" name="lastName" placeholder="Enter your last name" required />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="email" className="text-gray-700">Email Address</Label>
-                      <Input id="email" type="email" placeholder="Enter your email" required />
+                      <Input id="email" name="email" type="email" placeholder="Enter your email" required />
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="subject" className="text-gray-700">Subject</Label>
-                      <Input id="subject" placeholder="How can we help you?" required />
+                      <Input id="subject" name="subject" placeholder="How can we help you?" required />
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-gray-700">Message</Label>
-                      <Textarea id="message" placeholder="Type your message here..." rows={5} required />
+                      <Textarea id="message" name="message" placeholder="Type your message here..." rows={5} required />
                     </div>
                     
-                    <Button type="submit" className="bg-medical-600 hover:bg-medical-700 text-white w-full">
-                      Send Message <Send className="ml-2 h-4 w-4" />
+                    <Button 
+                      type="submit" 
+                      className="bg-medical-600 hover:bg-medical-700 text-white w-full"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <>Processing...</>
+                      ) : (
+                        <>Send Message <Send className="ml-2 h-4 w-4" /></>
+                      )}
                     </Button>
                   </form>
                 </CardContent>
