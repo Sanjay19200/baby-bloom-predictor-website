@@ -149,13 +149,9 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">Our Location</h3>
                       <p className="text-gray-600">
-                    </p>
-                      <p className="text-gray-600">Our College:
-
-CSE dept
-Dayanand Sagar Academy of Technology and Management
-
-INDIA</p>
+                        BabyBloom Predictor
+                      </p>
+                      <p className="text-gray-600">CSE dept<br />Dayanand Sagar Academy of Technology and Management<br />INDIA</p>
                     </div>
                   </div>
                   
